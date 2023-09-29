@@ -1,4 +1,4 @@
 #!/bin/bash
-# makes a req to 0.0.0.0:5000/catch_me for a response "You got me!"
-curl -sX PUT -L -d "user_id=98" --header "origin: HolbertonSchool" 0.0.0.0:5000/catch_me
+# ends a request to that URL displays the size of the response body
+curl -sI "$1" | grep -i Content-Length | cut -d " " -f2
 
