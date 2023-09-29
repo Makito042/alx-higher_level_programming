@@ -1,4 +1,3 @@
 #!/bin/bash
-# curl to display all HTTP methods the server accepts
-curl -sI "$1" | grep "Allow" | cut -d " " -f 2-
-
+# check the methods supported
+curl -s -I --request OPTIONS "$1" | grep "Allow" | sed 's/Allow: //'
